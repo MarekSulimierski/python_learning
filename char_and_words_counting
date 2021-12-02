@@ -1,0 +1,7 @@
+zdanie = "Marek spaceruje z dużym psem"
+zdanie2 = zdanie.replace(" ","")
+print(len(zdanie))
+#print
+iloscSlow = len(zdanie) - len(zdanie2) + 1
+print("Ilość słów w ciągu: "+ zdanie + " wynosi: " + str(iloscSlow))
+print(zdanie2.count("e"))
