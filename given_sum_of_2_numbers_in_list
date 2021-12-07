@@ -1,0 +1,12 @@
+import copy
+lista = [5, 3, 4, 2, 7, 8, 6]
+newLista = copy.copy(lista)
+resultLista = []
+for i in range (len(lista)-1):
+    for j in range (i+1, len(newLista)-1):
+        if lista[i] + newLista[j] == 9:
+            x = str(lista[i]) + "," + str(newLista[j])
+            
+            resultLista.append(x)
+            #print(lista[i], newLista[j])
+print(resultLista)
