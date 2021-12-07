@@ -8,5 +8,4 @@ for i in range (len(lista)-1):
             x = str(lista[i]) + "," + str(newLista[j])
             
             resultLista.append(x)
-            #print(lista[i], newLista[j])
 print(resultLista)
