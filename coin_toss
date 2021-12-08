@@ -1,0 +1,28 @@
+import time
+import random
+userPoints = 0
+cpuPoints = 0
+for turnQty in range(10):
+    coinSide = input("podaj O lub R: ")
+    time.sleep(0.5)
+    print("3...")
+    time.sleep(1)
+    print("2...")
+    time.sleep(1)
+    print("1...")
+    time.sleep(1)
+
+    coinToss = random.randint(0,1) # można użyć funkcji random.choice
+    if coinToss == 0: 
+        result = 'O'
+    elif coinToss == 1:
+        result = 'R'
+    else:
+        pass
+    print("wynik rzutu to:" + result)
+    if result == coinSide:
+        userPoints += 1
+    elif result != coinSide:
+        cpuPoints += 1
+    print('Masz ' + str(userPoints) + ' punktów')
+    print('Twój przeciwinik ma ' + str(cpuPoints) + ' punktów')
