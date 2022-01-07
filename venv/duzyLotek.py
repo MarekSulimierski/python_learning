@@ -11,7 +11,7 @@ for i in range (0,len(textNumerals)):
         while userNumber < 0 or userNumber > 49:
             print("Podaj liczbę w przedziale 0 - 49")
             userNumber = int(input())
-        if userNumber in selectedNumbers:
+        while userNumber in selectedNumbers:
             print("Ta liczba już została wybrana, podaj inną liczbę")
             userNumber = int(input())
         else:
@@ -28,3 +28,4 @@ A = set(selectedNumbers)
 B = set(drawnNumbers)
 guessedNumbers = A.intersection(B)
 print("Trafiłeś liczby: " + str(guessedNumbers))
+
