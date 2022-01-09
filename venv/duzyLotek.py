@@ -7,7 +7,13 @@ selectedNumbers = []
 textNumerals = ['pierwszą', 'drugą', 'trzecią', 'czwartą', 'piątą', 'szóstą']
 for i in range (0,len(textNumerals)):
         print("Podaj " + textNumerals[i] + " liczbę od 0 do 49: ", end='')
-        userNumber = int(input())
+        while True:
+            userNumber = input()
+            if userNumber.isdecimal():
+                break
+            else:
+                print('Podaj proszę wartość liczbową')
+        userNumber = int(userNumber)
         while userNumber < 0 or userNumber > 49:
             print("Podaj liczbę w przedziale 0 - 49")
             userNumber = int(input())
