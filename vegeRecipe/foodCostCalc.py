@@ -23,17 +23,23 @@ while True:
     opisDania = input("Podaj krótki opis dania: ")
     noweDanie.append(opisDania)
 # Kalkulacja ceny
-    skladnikUser = input("Wybierz składnik z listy (podaj nr): ")
+    while True:
+        skladnikUser = input("Wybierz składnik z listy (podaj nr): ")
 
-    cur.execute("SELECT cena FROM skladniki WHERE id=?", skladnikUser)
-    pobranySkladnik = cur.fetchone()
-    for skladnikFC in pobranySkladnik:
-        print(skladnikFC)
-    iloscSkladnika = float(input("Podaj ilość składnika w kg: "))
+        cur.execute("SELECT cena FROM skladniki WHERE id=?", skladnikUser)
+        pobranySkladnik = cur.fetchone()
+        for skladnikFC in pobranySkladnik:
+            print(skladnikFC)
+        iloscSkladnika = float(input("Podaj ilość składnika w kg: "))
 
-    fcDania = str(skladnikFC*iloscSkladnika)
-    print(fcDania)
+        odpKolejny = input("Czy chcesz dodać kolejny?(T/N): ")
+        if odpKolejny == "T":
+            continue
+        else:
+            break
+        fcDania = str(skladnikFC*iloscSkladnika)
+        print(fcDania)
 
-    noweDanie.append(fcDania)
-    break
+        noweDanie.append(fcDania)
+        break
 print(noweDanie)
